@@ -6,10 +6,14 @@ const forecast = require('./utils/forecast');
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 // Define Express config
 const publicDirPath = path.join(__dirname, '../public');
 const viewPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
+
+console.log(process.env.myname);
 
 //Setup handlebar engines and views location
 app.set('view engine', 'hbs');
@@ -83,6 +87,6 @@ app.get('/*\w', (req, res) => { //
     }));
 });
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+app.listen(port, () => {
+    console.log("Server is running on port " + port);
 });
