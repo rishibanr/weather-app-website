@@ -3,7 +3,7 @@ body {
     font-family: arial;
     max-width: 650px;
     margin: 0 auto;
-    padding: 20px 29px;
+    padding: 0 16px;
 
     display: flex;
     flex-direction: column;
@@ -42,13 +42,14 @@ header a {
 }
 
 input {
-    border: 1px solid #CCCCCC;
+    border: 1px solid #cccccc;
     padding: 8px;
 }
 
 button {
-    border: 1px solid #888888;
-    color: 'white';
     cursor: pointer;
+    border: 1px solid #888888;
     background: #888888;
+    color: white;
+    padding: 8px;
 }

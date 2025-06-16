@@ -13,7 +13,6 @@ const publicDirPath = path.join(__dirname, '../public');
 const viewPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
 
-console.log(process.env.myname);
 
 //Setup handlebar engines and views location
 app.set('view engine', 'hbs');
@@ -48,13 +47,13 @@ app.get('/help', (req, res) => {
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
         return res.send({
-            error: 'Please give a valid address'
+            error: 'Please enter a location',
         });
     }
     geocode(req.query.address, (error, { longitude, latitude, location } = {}) => {
         if (error) {
             return res.send({
-                error: 'error in geo code '
+                error: 'Please give a valid location'
             });
         }
         forecast(latitude, longitude, (error, data) => {

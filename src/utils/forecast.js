@@ -1,9 +1,9 @@
 const request = require('postman-request');
 
 const forecast = (longitude, latitude, callback) => {
-   const url =
-        'https://api.weatherstack.com/current?access_key=1a9b911d6448896bd7ec6cb9489eb353&query=' + longitude + ',' + latitude + '&units=f';
-    request({url, json: true }, (error, {body}) => {
+    const url =
+        'https://api.weatherstack.com/current?access_key=2fbb153ccf29c8e284b70873f10fceeb&query=' + longitude + ',' + latitude + '&units=f';
+    request({ url, json: true }, (error, { body }) => {
         if (error) {
             callback("Cannot connect with Webstack", undefined);
         }
@@ -12,7 +12,8 @@ const forecast = (longitude, latitude, callback) => {
             console.log(body.error)
         }
         else {
-            callback(undefined, 'Current temp is '+ body.current.temperature + '. It feels like ' + body.current.feelslike);
+            callback(undefined, 'Currently the temperature is ' + body.current.temperature + 
+                        '. It feels like ' + body.current.feelslike + '. The humidity is ' + body.current.humidity);
         }
     });
 }
