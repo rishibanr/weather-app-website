@@ -3,12 +3,11 @@ const request = require('postman-request');
 const geoCode = (address, callback) => {
 
     const url =
-        'https://api.mapbox.com/search/geocode/v6/forward?q=' + address + '&access_token=pk.eyJ1IjoicmlzaGliYW45MSIsImEiOiJjbWJxZmQ4bWkwM2F0Mm1zOWRzcnh2OTBlIn0.3saPcQACnVoTwZ7wonf4xw&limit=1';
-    console.log(url);
-    request({ url, json: true }, (error, { body }) => {
+        'https://api.mapbox.com/search/geocode/v6/forward?q=' + address + '&access_token=pk.eyJ1IjoicmlzaGliYW45MSIsImEiOiJjbWYxNGplZ3gwejIzMmxyMXVqOTNoYzdzIn0.Ww-xSh-0EHVJ4o1gB_90dQ';
+    request({ url, json: true }, (error, { body }) => { // this was the response before, but now it is destructured
         if (error) {
             callback('Unable to connect to location services!', undefined);
-        } else if (body.features.length === 0) {
+        } else if (body.features.length === 0) { // this was response.body.features.length before
             console.log("dei " + body.features.length);
             callback('Unable to find location. Try another search.', undefined)
         } else {

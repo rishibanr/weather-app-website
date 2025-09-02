@@ -22,24 +22,25 @@ hbs.registerPartials(partialsPath);
 //Setup static directory
 app.use(express.static(publicDirPath));
 
+//get() has 2 args. First is the route (/help), and second argument is a func() with a req and response.
 app.get('', (req, res) => {
     res.render('index', ({
         title: 'Weather',
-        name: 'Created by Rishiban'
+        name: 'Rishiban'
     }))
 });
 
 app.get('/about', (req, res) => {
     res.render('about', ({
         title: "About me",
-        name: 'Created by Rishiban'
+        name: 'Rishiban'
     }))
 });
 
 app.get('/help', (req, res) => {
     res.render('help', ({
         title: "Help",
-        name: 'Created by Rishiban',
+        name: 'Rishiban',
         helpText: 'This is a help page'
     }))
 });
