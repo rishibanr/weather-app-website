@@ -3,7 +3,9 @@ name: Node.js CI on Windows
 
 on:
   push:
-    branches: [ main ]
+    branches: 
+          -main
+          -git-action-branch
   pull_request:
     branches: [ main ]
 
@@ -21,7 +23,7 @@ jobs:
         node-version: 18.17.1
     - name: Install dependencies
       run: npm install
-      
+
     - name: Run tests
       run: npm test
 
