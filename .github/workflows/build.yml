@@ -3,9 +3,7 @@ name: Node.js CI on Windows
 
 on:
   push:
-    branches: 
-          -main
-          -github-action-branch
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
