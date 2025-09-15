@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js -e js,hbs"
+    "dev": "nodemon src/app.js -e js,hbs",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0",
     "hbs": "^4.2.0",
+    "jest": "^30.1.3",
     "postman-request": "^2.88.1-postman.42"
   },
   "devDependencies": {
