@@ -5,7 +5,7 @@ on:
   push:
     branches: 
           -main
-          -git-action-branch
+          -github-action-branch
   pull_request:
     branches: [ main ]
 
