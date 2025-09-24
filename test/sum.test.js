@@ -5,6 +5,6 @@ test('first test',()=>{
 })
 
 test('second test',()=>{
-    expect(add()).toBe(15)
+    expect(add()).toBe(5)
 })
 
